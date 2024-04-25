@@ -1,8 +1,9 @@
 #pragma once
 
-using namespace std;
+using namespace System;
 
-public ref class perfil {
+namespace Proyecto_Grupo11_model {
+	public ref class perfil {
 
 	private:
 		int usuario;
@@ -16,6 +17,8 @@ public ref class perfil {
 
 	public:
 		perfil();
-		perifl(int usuario, String^ contraseña, String^ licencia, String^ contacto, int dias_restantes, String^ saved_plantillas, String^ historial);
+		perifl(int usuario, String^ contraseña, String^ licencia, String^ contacto, int dias_restantes, String^ saved_plantillas, String^ historial, licencia^ objlicencia);
 
-};
+	};
+}
+

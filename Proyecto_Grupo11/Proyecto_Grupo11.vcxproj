@@ -142,6 +142,10 @@
     <ClInclude Include="licencia.h" />
     <ClInclude Include="perfil.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="administrador.cpp" />
+    <ClCompile Include="estado_corte.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

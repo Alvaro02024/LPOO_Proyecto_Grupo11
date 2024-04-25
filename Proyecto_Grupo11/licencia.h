@@ -2,7 +2,8 @@
 
 using namespace System;
 
-public ref class licencia {
+namespace Proyecto_Grupo11_model {
+	public ref class licencia {
 	private:
 		int codigo;
 		String^ tipo;
@@ -13,4 +14,6 @@ public ref class licencia {
 	public:
 		licencia();
 		licencia(int codigo, String^ tipo, int num_usuarios, String^ fecha_compra, String^ fecha_vencimiento);
-};
+	};
+}
+

@@ -1,8 +1,10 @@
 #pragma once
 
-using namespace Style;
+using namespace System;
+using namespace System::Collections::Generic;
 
-public ref class tipo_accion {
+namespace Proyecto_Grupo11_model {
+	public ref class tipo_accion {
 	private:
 		int codigo;
 		String^ seleccion;
@@ -10,4 +12,7 @@ public ref class tipo_accion {
 	public:
 		tipo_accion();
 		tipo_accion(int codigo, String^ seleccion, administrador^ objadministrador);
-};
+	};
+}
+
+

@@ -1,7 +1,11 @@
 #pragma once
 
+
 using namespace System;
-public ref class administrador {
+
+namespace Proyecto_Grupo11_model {
+
+	public ref class administrador {
 	private:
 		int user;
 		String^ contraseña;
@@ -10,5 +14,17 @@ public ref class administrador {
 
 	public:
 		administrador();
-		administrador(int user, String^ contraseña, String^ historial_admin);
-};
+		administrador(int user, String^ contraseña, String^ contacto, String^ historial_admin);
+
+		int getuser();
+		void setuser(int user);
+		String^ getcontraseña();
+		void setcontraseña(String^ contraseña);
+		String^ contacto();
+		void setcontacto(String^ contacto);
+		String^ gethistorial_admin();
+		void sethistorial_admin(String^ historial_admin);
+
+	}
+}
+ 
