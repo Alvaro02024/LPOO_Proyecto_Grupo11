@@ -51,5 +51,8 @@
     <ClInclude Include="administrador.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="estado_maquina.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

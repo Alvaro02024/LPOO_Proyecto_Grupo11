@@ -130,6 +130,7 @@
   <ItemGroup>
     <ClInclude Include="figura_corte.h" />
     <ClInclude Include="estado_corte.h" />
+    <ClInclude Include="estado_maquina.h" />
     <ClInclude Include="tipo_accion.h" />
     <ClInclude Include="administrador.h" />
     <ClInclude Include="tipo_corte.h" />

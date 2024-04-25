@@ -8,6 +8,7 @@ public ref class material {
 		String^ nombre_material;
 		int dimensiones_max;
 		String^ dureza;
+		int rev_husillo;
 
 	public:
 		material();

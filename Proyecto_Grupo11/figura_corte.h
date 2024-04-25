@@ -8,8 +8,10 @@ public ref class figura_corte {
 		String^ material;
 		String^ fecha_creacion;
 		String^ diseño;
+		tipo_accion^ objtipo_accion;
+		List<linea_corte^>^ Listlinea_corte
 
 	public:
 		figura_corte();
-		figura_corte(String^ autor, String^ material, String^ fecha_creacion, String^ diseño);
+		figura_corte(String^ autor, String^ material, String^ fecha_creacion, String^ diseño, tipo_accion^ objtipo_accion);
 };

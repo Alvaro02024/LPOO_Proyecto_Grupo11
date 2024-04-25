@@ -12,6 +12,7 @@ public ref class perfil {
 		int dias_restantes;
 		String^ saved_plantillas;
 		String^ historial;
+		licencia^ objlicencia;
 
 	public:
 		perfil();
