@@ -145,6 +145,8 @@
   <ItemGroup>
     <ClCompile Include="administrador.cpp" />
     <ClCompile Include="estado_corte.cpp" />
+    <ClCompile Include="material.cpp" />
+    <ClCompile Include="licencia.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
