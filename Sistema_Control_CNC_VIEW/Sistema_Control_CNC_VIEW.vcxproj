@@ -114,8 +114,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Proyecto_Grupo11\Proyecto_Grupo11.vcxproj">
-      <Project>{b9f46287-018c-4192-b366-5cbd8e0466c1}</Project>
+    <ProjectReference Include="..\Proyecto_SistemaCNC_model\Proyecto_SistemaCNC_model.vcxproj">
+      <Project>{78963ac9-2271-46b8-bd07-ac1a7f6c7591}</Project>
     </ProjectReference>
     <ProjectReference Include="..\Ptoyecto_Grupo11_Controller\Ptoyecto_Grupo11_Controller.vcxproj">
       <Project>{ad32a750-c7e3-49a1-9daa-416f75d568bf}</Project>

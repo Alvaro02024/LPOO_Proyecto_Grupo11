@@ -18,20 +18,14 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Proyecto_SistemaCNC_model\Proyecto_SistemaCNC_model.vcxproj">
-      <Project>{78963ac9-2271-46b8-bd07-ac1a7f6c7591}</Project>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
-    <ProjectGuid>{AD32A750-C7E3-49A1-9DAA-416F75D568BF}</ProjectGuid>
+    <ProjectGuid>{78963AC9-2271-46B8-BD07-AC1A7F6C7591}</ProjectGuid>
     <EnableManagedPackageReferenceSupport>true</EnableManagedPackageReferenceSupport>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
-    <RootNamespace>PtoyectoGrupo11Controller</RootNamespace>
+    <RootNamespace>ProyectoSistemaCNCmodel</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>Proyecto_SistemaCNC_Controller</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -117,6 +111,24 @@
       <AdditionalDependencies />
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="administrador.h" />
+    <ClInclude Include="estado_corte.h" />
+    <ClInclude Include="estado_maquina.h" />
+    <ClInclude Include="figura_corte.h" />
+    <ClInclude Include="herramienta_corte.h" />
+    <ClInclude Include="licencia.h" />
+    <ClInclude Include="linea_corte.h" />
+    <ClInclude Include="material.h" />
+    <ClInclude Include="movimiento.h" />
+    <ClInclude Include="perfil.h" />
+    <ClInclude Include="posicion.h" />
+    <ClInclude Include="tipo_accion.h" />
+    <ClInclude Include="tipo_corte.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="administrador.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

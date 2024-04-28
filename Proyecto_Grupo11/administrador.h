@@ -1,8 +1,5 @@
 #pragma once
-
-
 using namespace System;
-
 namespace Proyecto_Grupo11_model {
 
 	public ref class administrador {
