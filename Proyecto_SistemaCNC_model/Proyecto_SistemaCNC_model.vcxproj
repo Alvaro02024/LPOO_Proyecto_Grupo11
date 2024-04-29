@@ -130,10 +130,14 @@
     <ClCompile Include="administrador.cpp" />
     <ClCompile Include="estado_corte.cpp" />
     <ClCompile Include="estado_maquina.cpp" />
+    <ClCompile Include="figura_corte.cpp" />
     <ClCompile Include="herramienta_corte.cpp" />
     <ClCompile Include="licencia.cpp" />
     <ClCompile Include="linea_corte.cpp" />
+    <ClCompile Include="material.cpp" />
+    <ClCompile Include="movimiento.cpp" />
     <ClCompile Include="perfil.cpp" />
+    <ClCompile Include="posicion.cpp" />
     <ClCompile Include="tipo_accion.cpp" />
     <ClCompile Include="tipo_corte.cpp" />
   </ItemGroup>
