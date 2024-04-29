@@ -128,6 +128,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="administrador.cpp" />
+    <ClCompile Include="estado_corte.cpp" />
+    <ClCompile Include="estado_maquina.cpp" />
+    <ClCompile Include="herramienta_corte.cpp" />
+    <ClCompile Include="licencia.cpp" />
+    <ClCompile Include="linea_corte.cpp" />
+    <ClCompile Include="perfil.cpp" />
+    <ClCompile Include="tipo_accion.cpp" />
+    <ClCompile Include="tipo_corte.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

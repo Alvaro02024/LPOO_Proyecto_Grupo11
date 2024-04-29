@@ -2,7 +2,7 @@
 #include "material.h"
 
 using namespace System;
-using namespace System::Collections::Generic;
+
 
 namespace Proyecto_SistemaCNC_model {
 	public ref class tipo_corte : material {
@@ -15,5 +15,14 @@ namespace Proyecto_SistemaCNC_model {
 	public:
 		tipo_corte();
 		tipo_corte(int codigo, String^ tipo, int offset, double posicion_husillo);
+
+		int getCodigo();
+		void setCodigo(int codigo);
+		String^ getTipo();
+		void setTipo(String^ tipo);
+		double getPosicionHusillo();
+		void setPosicionHusillo(double posicion_husillo);
+		int getOffset();
+		void setOffset(int offset);
 	};
 };

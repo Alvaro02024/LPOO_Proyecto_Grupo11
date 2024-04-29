@@ -13,5 +13,12 @@ namespace Proyecto_SistemaCNC_model {
 	public:
 		tipo_accion();
 		tipo_accion(int codigo, String^ seleccion, administrador^ objadministrador);
+
+		int getCodigo();
+		void setCodigo(int codigo);
+		String^ getSeleccion();
+		void setSeleccion(String^ seleccion);
+		administrador^ getObjAdministrador();
+		void setObjAdministrador(administrador^ objadministrador);
 	};
 };

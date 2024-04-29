@@ -14,5 +14,15 @@ namespace Proyecto_SistemaCNC_model {
 		licencia();
 		licencia(int codigo, String^ tipo, int num_usuarios, String^ fecha_compra, String^ fecha_vencimiento);
 
+		int getCodigo();
+		void setCodigo(int codigo);
+		String^ getTipo();
+		void setTipo(String^ tipo);
+		int getNumUsuarios();
+		void setNumUsuarios(int num_usuarios);
+		String^ getFechaCompra();
+		void setFechaCompra(String^ fecha_compra);
+		String^ getFechaVencimiento();
+		void setFechaVencimiento(String^ fecha_vencimiento);
 	};
 };
