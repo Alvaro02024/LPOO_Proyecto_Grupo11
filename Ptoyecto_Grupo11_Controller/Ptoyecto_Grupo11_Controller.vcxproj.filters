@@ -15,12 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FiguraCorteController.h">
+    <ClInclude Include="showFiguraCorteController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="FiguraCorteController.cpp">
+    <ClCompile Include="showFiguraCorteController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

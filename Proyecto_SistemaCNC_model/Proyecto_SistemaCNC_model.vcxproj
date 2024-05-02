@@ -116,6 +116,7 @@
     <ClInclude Include="estado_corte.h" />
     <ClInclude Include="estado_maquina.h" />
     <ClInclude Include="figura_corte.h" />
+    <ClInclude Include="showFiguraCorte.h" />
     <ClInclude Include="herramienta_corte.h" />
     <ClInclude Include="licencia.h" />
     <ClInclude Include="linea_corte.h" />
@@ -138,6 +139,7 @@
     <ClCompile Include="movimiento.cpp" />
     <ClCompile Include="perfil.cpp" />
     <ClCompile Include="posicion.cpp" />
+    <ClCompile Include="showFiguraCorte.cpp" />
     <ClCompile Include="tipo_accion.cpp" />
     <ClCompile Include="tipo_corte.cpp" />
   </ItemGroup>

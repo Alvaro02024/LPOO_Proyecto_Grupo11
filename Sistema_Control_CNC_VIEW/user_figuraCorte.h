@@ -8,7 +8,7 @@ namespace SistemaControlCNCVIEW {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-	using namespace Proyecto_SitemaCNC_Controller;
+	using namespace Proyecto_SistemaCNC_Controller;
 	using namespace System::Collections::Generic;
 	using namespace Proyecto_SistemaCNC_model;
 
@@ -207,13 +207,22 @@ namespace SistemaControlCNCVIEW {
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ ID = this->comboBox1->Text;
-		FiguraCorteController^ objFiguraCorteController = gcnew FiguraCorteController();
-		List<figura_corte^>^ listafigura_corte = objFiguraCorteController->buscarID_figuraCorte(ID);
-		mostrarGrilla(listafigura_corte);
+		showFiguraCorteController^ objFiguraCorteController = gcnew showFiguraCorteController();
+		List<showFiguraCorte^>^ listashowFiguraCorte = objFiguraCorteController->buscarID_showFiguraCorte(ID);
+		mostrarGrilla(listashowFiguraCorte);
 	}
 
-		   private: void mostrarGrilla(List<figura_corte^>^ listafigura_corte) {
-			   for(int i=0; i< listafigura_corte->)
-		   }
+	private: void mostrarGrilla(List<showFiguraCorte^>^ listashowFiguraCorte) {
+		for (int i = 0; i < listashowFiguraCorte->Count; i++) {
+			showFiguraCorte^ objshowFiguraCorte = listashowFiguraCorte[i];
+			array<String^>^ filaGrilla = gcnew array<String^>(5);
+			filaGrilla[0] = Convert::ToString(objshowFiguraCorte->getID());
+			filaGrilla[1] = objshowFiguraCorte->getAutor();
+			filaGrilla[2] = objshowFiguraCorte->getMaterial();
+			filaGrilla[3] = objshowFiguraCorte->getFechaCreacion();
+			filaGrilla[4] = objshowFiguraCorte->getDiseño();
+			this->dataGridView1->Rows->Add();//1:59
+		}
+	};
 };
 }

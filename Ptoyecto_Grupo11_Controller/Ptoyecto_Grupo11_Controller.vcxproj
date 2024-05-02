@@ -24,10 +24,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FiguraCorteController.h" />
+    <ClInclude Include="showFiguraCorteController.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="FiguraCorteController.cpp" />
+    <ClCompile Include="showFiguraCorteController.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
