@@ -59,6 +59,6 @@ List<tipo_corte^>^ material::getObjtipo_corte() {
 	return this->listtipo_corte;
 }
 
-List<tipo_corte^>^ material::setObjtipo_corte() {
+void material::setObjtipo_corte(List<tipo_corte^>^ listtipo_corte) {
 	this->listtipo_corte = listtipo_corte;
 }

@@ -1,4 +1,8 @@
 #pragma once
+#include "aviso_licencia.h";
+#include "aviso_perfil.h";
+#include "user_figuraCorte.h";
+#include "admin_figuraCorte.h";
 
 namespace SistemaControlCNCVIEW {
 
@@ -139,6 +143,7 @@ namespace SistemaControlCNCVIEW {
 			this->button2->TabIndex = 4;
 			this->button2->Text = L"SALIR";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &ventana_inicio::button2_Click);
 			// 
 			// button3
 			// 
@@ -150,6 +155,7 @@ namespace SistemaControlCNCVIEW {
 			this->button3->TabIndex = 4;
 			this->button3->Text = L"INGRESAR";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &ventana_inicio::button3_Click);
 			// 
 			// ventana_inicio
 			// 
@@ -172,5 +178,19 @@ namespace SistemaControlCNCVIEW {
 
 		}
 #pragma endregion
-	};
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (true) {
+			user_figuraCorte^ ventana_user_figuraCorte = gcnew user_figuraCorte();
+			ventana_user_figuraCorte->Show();
+			this->MinimizeBox;
+			
+		}
+		
+
+		
+	}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
+};
 }

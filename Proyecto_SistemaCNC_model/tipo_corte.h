@@ -1,11 +1,11 @@
 #pragma once
-#include "material.h"
+
 
 using namespace System;
 
 
 namespace Proyecto_SistemaCNC_model {
-	public ref class tipo_corte : material {
+	public ref class tipo_corte  {
 	private:
 		int codigo;
 		String^ tipo;
@@ -23,6 +23,6 @@ namespace Proyecto_SistemaCNC_model {
 		double getPosicionHusillo();
 		void setPosicionHusillo(double posicion_husillo);
 		int getOffset();
-		void setOffset(int offset);
+		void setOffset(int offset); 
 	};
 };

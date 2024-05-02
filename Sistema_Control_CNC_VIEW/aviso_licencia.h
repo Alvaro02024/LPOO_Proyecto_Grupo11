@@ -90,6 +90,7 @@ namespace SistemaControlCNCVIEW {
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"ACEPTAR";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &aviso_licencia::button1_Click);
 			// 
 			// aviso_licencia
 			// 
@@ -106,5 +107,8 @@ namespace SistemaControlCNCVIEW {
 
 		}
 #pragma endregion
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		//regresar a pagina principal
+	}
 	};
 }

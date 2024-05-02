@@ -33,9 +33,6 @@
     <ClCompile Include="admin_figuraCorte.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="new_figuraCorte.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
     <ClCompile Include="edit_figuraCorte.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
@@ -54,9 +51,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="admin_figuraCorte.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="new_figuraCorte.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="edit_figuraCorte.h">

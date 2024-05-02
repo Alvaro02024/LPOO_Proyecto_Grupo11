@@ -23,6 +23,12 @@
       <Project>{78963ac9-2271-46b8-bd07-ac1a7f6c7591}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FiguraCorteController.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FiguraCorteController.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <ProjectGuid>{AD32A750-C7E3-49A1-9DAA-416F75D568BF}</ProjectGuid>

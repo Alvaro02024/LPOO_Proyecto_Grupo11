@@ -12,23 +12,23 @@ namespace Proyecto_SistemaCNC_model {
 		int dimensiones_max;
 		String^ dureza;
 		int rev_husillo;
-		List<tipo_corte^>^ listtipo_corte;
+		List<tipo_corte^>^ listtipo_corte; //list
 
 	public:
 		material();
 		material(int codigo, String^ nombre_material, int dimensiones_max, String^ dureza, int rev_husillo, List<tipo_corte^>^ listtipo_corte);
 		
-		int getCodigo();
-		void setCodigo(int codigo);
-		String^ getNombreMaterial();
-		void setNombreMaterial(String^ nombre_material);
-		int getDimensionesMax();
-		void setDimensionesMax(int dimensiones_max);
-		String^ getDureza();
-		void setDureza(String^ dureza);
-		int getRevHusillo();
-		void setRevHusillo(int rev_husillo);
+		int material::getCodigo();
+		void material::setCodigo(int codigo);
+		String^ material::getNombreMaterial();
+		void material::setNombreMaterial(String^ nombre_material);
+		int material::getDimensionesMax();
+		void material::setDimensionesMax(int dimensiones_max);
+		String^ material::getDureza();
+		void material::setDureza(String^ dureza);
+		int material::getRevHusillo();
+		void material::setRevHusillo(int rev_husillo);
 		List<tipo_corte^>^ material::getObjtipo_corte();
-		List<tipo_corte^>^ setObjtipo_corte();
+		void material::setObjtipo_corte(List<tipo_corte^>^ listtipo_corte);
 	};
 };
