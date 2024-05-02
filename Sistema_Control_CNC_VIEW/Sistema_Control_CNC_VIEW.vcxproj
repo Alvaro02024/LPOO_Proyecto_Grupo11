@@ -122,7 +122,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="admin_figuraCorte.cpp" />
+    <ClCompile Include="aviso_licencia.cpp" />
+    <ClCompile Include="aviso_perfil.cpp" />
+    <ClCompile Include="edit_figuraCorte.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="new_figuraCorte.cpp" />
+    <ClCompile Include="user_figuraCorte.cpp" />
     <ClCompile Include="ventana_inicio.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -133,11 +139,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="admin_figuraCorte.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="aviso_licencia.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="aviso_perfil.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="edit_figuraCorte.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="new_figuraCorte.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="user_figuraCorte.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ventana_inicio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="admin_figuraCorte.resx">
+      <DependentUpon>admin_figuraCorte.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="aviso_licencia.resx">
+      <DependentUpon>aviso_licencia.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="aviso_perfil.resx">
+      <DependentUpon>aviso_perfil.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="edit_figuraCorte.resx">
+      <DependentUpon>edit_figuraCorte.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="new_figuraCorte.resx">
+      <DependentUpon>new_figuraCorte.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_figuraCorte.resx">
+      <DependentUpon>user_figuraCorte.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ventana_inicio.resx">
       <DependentUpon>ventana_inicio.h</DependentUpon>
     </EmbeddedResource>
