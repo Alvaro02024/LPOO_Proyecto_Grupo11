@@ -8,6 +8,9 @@ namespace SistemaControlCNCVIEW {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace Proyecto_SitemaCNC_Controller;
+	using namespace System::Collections::Generic;
+	using namespace Proyecto_SistemaCNC_model;
 
 	/// <summary>
 	/// Summary for user_figuraCorte
@@ -204,6 +207,13 @@ namespace SistemaControlCNCVIEW {
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ ID = this->comboBox1->Text;
+		FiguraCorteController^ objFiguraCorteController = gcnew FiguraCorteController();
+		List<figura_corte^>^ listafigura_corte = objFiguraCorteController->buscarID_figuraCorte(ID);
+		mostrarGrilla(listafigura_corte);
 	}
+
+		   private: void mostrarGrilla(List<figura_corte^>^ listafigura_corte) {
+			   for(int i=0; i< listafigura_corte->)
+		   }
 };
 }
