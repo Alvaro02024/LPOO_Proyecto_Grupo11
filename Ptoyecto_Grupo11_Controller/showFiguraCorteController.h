@@ -11,5 +11,8 @@ namespace Proyecto_SistemaCNC_Controller {
 	public:
 		showFiguraCorteController();
 		List<showFiguraCorte^>^ buscarID_showFiguraCorte(String^ ID_showFiguraCorte);
+		List<showFiguraCorte^>^ buscarALL_showFiguraCorte();
+		void agregarSHOWfiguracorte(int ID, String^ autor, String^ material, String^ fecha_creacion, String^ diseño);
+		void escribirSHOWfiguracorte(List<showFiguraCorte^>^ ListaOBJ);
 	};
 };

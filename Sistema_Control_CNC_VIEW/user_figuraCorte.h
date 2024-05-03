@@ -1,4 +1,5 @@
 #pragma once
+#include "new_FiguraCorte.h";
 
 namespace SistemaControlCNCVIEW {
 
@@ -107,7 +108,7 @@ namespace SistemaControlCNCVIEW {
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"001", L"002", L"003", L"111", L"951" });
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"1", L"2", L"3" });
 			this->comboBox1->Location = System::Drawing::Point(230, 22);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(98, 21);
@@ -167,6 +168,7 @@ namespace SistemaControlCNCVIEW {
 			this->button2->TabIndex = 2;
 			this->button2->Text = L"Nuevo";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &user_figuraCorte::button2_Click);
 			// 
 			// button3
 			// 
@@ -213,6 +215,7 @@ namespace SistemaControlCNCVIEW {
 	}
 
 	private: void mostrarGrilla(List<showFiguraCorte^>^ listashowFiguraCorte) {
+		this->dataGridView1->Rows->Clear();
 		for (int i = 0; i < listashowFiguraCorte->Count; i++) {
 			showFiguraCorte^ objshowFiguraCorte = listashowFiguraCorte[i];
 			array<String^>^ filaGrilla = gcnew array<String^>(5);
@@ -221,8 +224,12 @@ namespace SistemaControlCNCVIEW {
 			filaGrilla[2] = objshowFiguraCorte->getMaterial();
 			filaGrilla[3] = objshowFiguraCorte->getFechaCreacion();
 			filaGrilla[4] = objshowFiguraCorte->getDiseño();
-			this->dataGridView1->Rows->Add();//1:59
+			this->dataGridView1->Rows->Add(filaGrilla);
 		}
 	};
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	new_FiguraCorte^ ventanaNewFiguraCorte = gcnew new_FiguraCorte();
+	ventanaNewFiguraCorte->ShowDialog();
+	}
 };
 }

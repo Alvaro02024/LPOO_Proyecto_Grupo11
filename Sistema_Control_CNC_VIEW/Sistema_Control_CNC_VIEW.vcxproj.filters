@@ -36,6 +36,9 @@
     <ClCompile Include="edit_figuraCorte.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="new_FiguraCorte.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ventana_inicio.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="edit_figuraCorte.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="new_FiguraCorte.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
