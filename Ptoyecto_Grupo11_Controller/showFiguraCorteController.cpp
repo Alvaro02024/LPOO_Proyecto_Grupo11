@@ -29,6 +29,27 @@ List<showFiguraCorte^>^ showFiguraCorteController::buscarID_showFiguraCorte(Stri
 	return(listashowFigura_Corte);
 };
 
+List<showFiguraCorte^>^ showFiguraCorteController::buscarAutor_showFiguraCorte(String^ autor_showFiguraCorte) {
+	List<showFiguraCorte^>^ listashowFigura_Corte = gcnew List<showFiguraCorte^>();
+	array<String^>^ lineas = File::ReadAllLines("Figuras_Predeterminadas.txt");
+	String^ separador = ";";
+	for each (String ^ figuraCorte in lineas) {
+		array<String^>^ datos = figuraCorte->Split(separador->ToCharArray());
+		int ID = Convert::ToInt32(datos[0]);
+		String^ autor = datos[1];
+		String^ material = datos[2];
+		String^ fecha_creacion = datos[3];
+		String^ diseño = datos[4];
+
+		if (autor_showFiguraCorte == autor) {
+			showFiguraCorte^ objshowFigura_Corte = gcnew showFiguraCorte(ID, autor, material, fecha_creacion, diseño);
+			listashowFigura_Corte->Add(objshowFigura_Corte);
+		}
+	}
+	return(listashowFigura_Corte);
+};
+
+
 List<showFiguraCorte^>^ showFiguraCorteController::buscarALL_showFiguraCorte() {
 	List<showFiguraCorte^>^ listashowFigura_Corte = gcnew List<showFiguraCorte^>();
 	array<String^>^ lineas = File::ReadAllLines("Figuras_Predeterminadas.txt");
@@ -57,5 +78,6 @@ void showFiguraCorteController::escribirSHOWfiguracorte(List<showFiguraCorte^>^ 
 		showFiguraCorte^ objFC = ListaOBJ[i];
 		lineasArchivo[i] = Convert::ToString(objFC->getID()) + ";" + objFC->getAutor() + ";" + objFC->getMaterial() + ";" + objFC->getFechaCreacion() + ";" + objFC->getDiseño();
 	}
-	File::WriteAllLines("Figuras_Predeterminadas.txt", lineasArchivo);
+	File::AppendAllLines("Figuras_Predeterminadas.txt", lineasArchivo);
+	
 }

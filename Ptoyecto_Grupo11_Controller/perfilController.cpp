@@ -8,10 +8,10 @@ perfilController::perfilController() {
 
 }
 
-int perfilController::confirmar_user(String^ user, String^ cont) {
+int perfilController::confirmar_user(String^ p_user, String^ p_cont) {
 	int confirmar;
 	confirmar = 0;
-	licencia^ lice;
+	//licencia^ lice;
 	array<String^>^ linea = File::ReadAllLines("user_cuentas.txt");
 	String^ separador = ";";
 	for each (String ^ perfiles in linea) {
@@ -19,13 +19,13 @@ int perfilController::confirmar_user(String^ user, String^ cont) {
 
 		int user = Convert::ToInt32(datos[0]);
 		String^ contraseña = datos[1];
-		String^ contacto = datos[2];
-		int dias_restantes = Convert::ToInt32(datos[3]);
+		String^ contacto = datos[3];
+		int dias_restantes = Convert::ToInt32(datos[2]);
 		String^ saved_plantillas = datos[4];
 		String^ historial = datos[5];
-		licencia^ objlicencia = lice;
+		//licencia^ objlicencia = lice;
 
-		if ((user == Convert::ToInt32(user)) && (cont == contraseña) && (dias_restantes>0)) {
+		if ((Convert::ToInt32(p_user) == Convert::ToInt32(user)) && (p_cont == contraseña) && (dias_restantes>0)) {
 			confirmar = 1;
 		}
 	}

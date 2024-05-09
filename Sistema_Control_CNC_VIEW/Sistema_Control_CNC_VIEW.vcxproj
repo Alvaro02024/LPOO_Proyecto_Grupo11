@@ -129,6 +129,7 @@
     <ClCompile Include="edit_figuraCorte.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="new_FiguraCorte.cpp" />
+    <ClCompile Include="user_acciones.cpp" />
     <ClCompile Include="user_figuraCorte.cpp" />
     <ClCompile Include="ventana_inicio.cpp" />
   </ItemGroup>
@@ -158,6 +159,9 @@
     <ClInclude Include="new_FiguraCorte.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="user_acciones.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="user_figuraCorte.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -183,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="new_FiguraCorte.resx">
       <DependentUpon>new_FiguraCorte.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_acciones.resx">
+      <DependentUpon>user_acciones.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user_figuraCorte.resx">
       <DependentUpon>user_figuraCorte.h</DependentUpon>

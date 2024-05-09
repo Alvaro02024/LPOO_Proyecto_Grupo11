@@ -7,7 +7,7 @@ administradorController::administradorController() {
 
 }
 
-int administradorController::confirmar_administradorController(String^ user, String^cont) {
+int administradorController::confirmar_administradorController(String^ a_user, String^ a_cont) {
 	int confirmar;
 	confirmar = 0;
 	array<String^>^ linea = File::ReadAllLines("cuenta_admin.txt");
@@ -19,7 +19,7 @@ int administradorController::confirmar_administradorController(String^ user, Str
 		String^ contacto = datos[2];
 		int usos = Convert::ToInt32(datos[3]);
 
-		if ((user == Convert::ToInt32(user)) && (cont == contraseña)) {
+		if ((Convert::ToInt32(a_user) == Convert::ToInt32(user)) && (a_cont == contraseña)) {
 			confirmar = 1;
 		}
 	}

@@ -56,11 +56,11 @@ namespace SistemaControlCNCVIEW {
 		void InitializeComponent(void)
 		{
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -76,37 +76,6 @@ namespace SistemaControlCNCVIEW {
 			this->groupBox1->TabIndex = 0;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Opciones de administrador:";
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label1->Location = System::Drawing::Point(62, 30);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(296, 37);
-			this->label1->TabIndex = 1;
-			this->label1->Text = L"ADMINISTRADOR";
-			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(109, 49);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(142, 43);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"Historial máquina";
-			this->button1->UseVisualStyleBackColor = true;
-			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(109, 117);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(142, 42);
-			this->button2->TabIndex = 1;
-			this->button2->Text = L"Nueva figura corte";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &admin_acciones::button2_Click);
 			// 
 			// button3
 			// 
@@ -127,6 +96,38 @@ namespace SistemaControlCNCVIEW {
 			this->button4->Text = L"Operación manual";
 			this->button4->UseVisualStyleBackColor = true;
 			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(109, 117);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(142, 42);
+			this->button2->TabIndex = 1;
+			this->button2->Text = L"Seleccionar figura corte";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &admin_acciones::button2_Click);
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(109, 49);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(142, 43);
+			this->button1->TabIndex = 0;
+			this->button1->Text = L"Historial máquina";
+			this->button1->UseVisualStyleBackColor = true;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->label1->Location = System::Drawing::Point(62, 30);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(296, 37);
+			this->label1->TabIndex = 1;
+			this->label1->Text = L"ADMINISTRADOR";
+			this->label1->Click += gcnew System::EventHandler(this, &admin_acciones::label1_Click);
+			// 
 			// admin_acciones
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -136,6 +137,7 @@ namespace SistemaControlCNCVIEW {
 			this->Controls->Add(this->groupBox1);
 			this->Name = L"admin_acciones";
 			this->Text = L"admin_acciones";
+			this->Load += gcnew System::EventHandler(this, &admin_acciones::admin_acciones_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -146,6 +148,10 @@ namespace SistemaControlCNCVIEW {
 	}
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
+}
+private: System::Void admin_acciones_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

@@ -1,4 +1,5 @@
 #pragma once
+#include "ventana_inicio.h";
 
 namespace SistemaControlCNCVIEW {
 
@@ -220,7 +221,18 @@ namespace SistemaControlCNCVIEW {
 	
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	int ID = Convert::ToInt32(this->textBox1->Text);
+	
+	/*
+	Esta parte es para determinar si se puede modificar o no el nombre del autor en la nueva pieza
+	 a partir de si uno es admin o perfil con licencia normal
+	if (es_user) {
+		String^ autor = 
+	}else if(es_admin) {
+		String^ autor = this->textBox2->Text;
+	}*/
+	
 	String^ autor = this->textBox2->Text;
+
 	String^ material = this->comboBox1->Text;
 	String^ fecha_creacion = this->textBox4->Text;
 	String^ diseño = this->textBox5->Text;

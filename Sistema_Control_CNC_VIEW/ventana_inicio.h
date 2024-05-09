@@ -1,7 +1,7 @@
 #pragma once
 #include "aviso_licencia.h";
 #include "aviso_perfil.h";
-#include "user_figuraCorte.h";
+#include "user_acciones.h";
 #include "admin_figuraCorte.h";
 #include "admin_acciones.h"
 
@@ -188,27 +188,43 @@ namespace SistemaControlCNCVIEW {
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ new_user = this->textBox1->Text;
 	String^ new_cont = this->textBox2->Text;
-	administradorController^ objadmin_conf = gcnew administradorController();
-	perfilController^ objperfil_conf = gcnew perfilController();
-	int confirmacion_admin = objadmin_conf->confirmar_administradorController(new_user, new_cont);
-	int confirmacion_user = objperfil_conf->confirmar_user(new_user, new_cont);
-	if (confirmacion_admin) {
-		admin_acciones^ ventana_admin_acciones = gcnew admin_acciones();
-		ventana_admin_acciones->Show();
-		this->MinimizeBox;
-	}
-	else if (confirmacion_user)
-	{
-		user_figuraCorte^ ventana_user_figuraCorte = gcnew user_figuraCorte();
-		ventana_user_figuraCorte->Show();
-		this->MinimizeBox;
+	
+	if ((new_user == "") || (new_cont == "")) {
+		MessageBox::Show("Porfavor ingrese su usuario y contraseña");
+		
 	}
 	else
 	{
-		MessageBox::Show("Usuario o Contraseña incorrecta");
+		administradorController^ objadmin_conf = gcnew administradorController();
+		perfilController^ objperfil_conf = gcnew perfilController();
+		int confirmacion_admin = objadmin_conf->confirmar_administradorController(new_user, new_cont);
+		int confirmacion_user = objperfil_conf->confirmar_user(new_user, new_cont);
+		if (confirmacion_admin) {
+			admin_acciones^ ventana_admin_acciones = gcnew admin_acciones();
+			ventana_admin_acciones->Show();
+			bool es_admin = true;
+			bool es_user = false;
+			this->MinimizeBox;
+		}
+		else if (confirmacion_user)
+		{
+			user_acciones^ ventana_user_acciones = gcnew user_acciones();
+			ventana_user_acciones->Show();
+			bool es_admin = false;
+			bool es_user = true;
+			this->MinimizeBox;
+		}
+		else
+		{
+			bool es_admin = false;
+			bool es_user = false;
+			MessageBox::Show("Usuario no válido");
+		}
+		this->textBox1->ResetText();
+		this->textBox2->ResetText();
 	}
-	this->textBox1->ResetText();
-	this->textBox2->ResetText();
+
+	
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();

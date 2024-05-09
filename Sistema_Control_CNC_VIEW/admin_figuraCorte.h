@@ -1,4 +1,5 @@
 #pragma once
+#include "new_FiguraCorte.h";
 
 namespace SistemaControlCNCVIEW {
 
@@ -8,6 +9,9 @@ namespace SistemaControlCNCVIEW {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace Proyecto_SistemaCNC_Controller;
+	using namespace System::Collections::Generic;
+	using namespace Proyecto_SistemaCNC_model;
 
 	/// <summary>
 	/// Summary for admin_figuraCorte
@@ -37,9 +41,9 @@ namespace SistemaControlCNCVIEW {
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::ComboBox^ comboBox2;
-	private: System::Windows::Forms::ComboBox^ comboBox1;
+
 	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ label1;
+
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
@@ -65,11 +69,9 @@ namespace SistemaControlCNCVIEW {
 		void InitializeComponent(void)
 		{
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -87,49 +89,13 @@ namespace SistemaControlCNCVIEW {
 			// 
 			this->groupBox1->Controls->Add(this->button1);
 			this->groupBox1->Controls->Add(this->comboBox2);
-			this->groupBox1->Controls->Add(this->comboBox1);
 			this->groupBox1->Controls->Add(this->label2);
-			this->groupBox1->Controls->Add(this->label1);
 			this->groupBox1->Location = System::Drawing::Point(17, 21);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Size = System::Drawing::Size(592, 98);
 			this->groupBox1->TabIndex = 0;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Criterios de búsqueda";
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(154, 28);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(21, 13);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"ID:";
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(154, 56);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(35, 13);
-			this->label2->TabIndex = 0;
-			this->label2->Text = L"Autor:";
-			// 
-			// comboBox1
-			// 
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(210, 25);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(125, 21);
-			this->comboBox1->TabIndex = 1;
-			// 
-			// comboBox2
-			// 
-			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Location = System::Drawing::Point(210, 56);
-			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(125, 21);
-			this->comboBox2->TabIndex = 1;
 			// 
 			// button1
 			// 
@@ -139,6 +105,24 @@ namespace SistemaControlCNCVIEW {
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"Buscar";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &admin_figuraCorte::button1_Click);
+			// 
+			// comboBox2
+			// 
+			this->comboBox2->FormattingEnabled = true;
+			this->comboBox2->Location = System::Drawing::Point(214, 30);
+			this->comboBox2->Name = L"comboBox2";
+			this->comboBox2->Size = System::Drawing::Size(125, 21);
+			this->comboBox2->TabIndex = 1;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(149, 38);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(35, 13);
+			this->label2->TabIndex = 0;
+			this->label2->Text = L"Autor:";
 			// 
 			// dataGridView1
 			// 
@@ -185,6 +169,7 @@ namespace SistemaControlCNCVIEW {
 			this->button2->TabIndex = 2;
 			this->button2->Text = L"Nuevo";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &admin_figuraCorte::button2_Click);
 			// 
 			// button3
 			// 
@@ -223,5 +208,29 @@ namespace SistemaControlCNCVIEW {
 
 		}
 #pragma endregion
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ autor = this->comboBox2->Text;
+		showFiguraCorteController^ objaFiguraCorteController = gcnew showFiguraCorteController();
+		List<showFiguraCorte^>^ listashowFiguraCorte = objaFiguraCorteController->buscarAutor_showFiguraCorte(autor);
+		mostrarGrilla(listashowFiguraCorte);
+	}
+
+	private: void mostrarGrilla(List<showFiguraCorte^>^ listashowFiguraCorte) {
+			this->dataGridView1->Rows->Clear();
+			for (int i = 0; i < listashowFiguraCorte->Count; i++) {
+				showFiguraCorte^ objshowFiguraCorte = listashowFiguraCorte[i];
+				array<String^>^ filaGrilla = gcnew array<String^>(5);
+				filaGrilla[0] = Convert::ToString(objshowFiguraCorte->getID());
+				filaGrilla[1] = objshowFiguraCorte->getAutor();
+				filaGrilla[2] = objshowFiguraCorte->getMaterial();
+				filaGrilla[3] = objshowFiguraCorte->getFechaCreacion();
+				filaGrilla[4] = objshowFiguraCorte->getDiseño();
+				this->dataGridView1->Rows->Add(filaGrilla);
+			}
 	};
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+			new_FiguraCorte^ ventanaNewFiguraCorte = gcnew new_FiguraCorte();
+			ventanaNewFiguraCorte->ShowDialog();
+	}
+};
 }
