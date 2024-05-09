@@ -122,6 +122,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="admin_acciones.cpp" />
     <ClCompile Include="admin_figuraCorte.cpp" />
     <ClCompile Include="aviso_licencia.cpp" />
     <ClCompile Include="aviso_perfil.cpp" />
@@ -139,6 +140,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="admin_acciones.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="admin_figuraCorte.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -162,6 +166,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="admin_acciones.resx">
+      <DependentUpon>admin_acciones.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="admin_figuraCorte.resx">
       <DependentUpon>admin_figuraCorte.h</DependentUpon>
     </EmbeddedResource>

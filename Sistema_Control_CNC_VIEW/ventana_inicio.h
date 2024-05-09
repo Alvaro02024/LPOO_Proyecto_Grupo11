@@ -3,6 +3,8 @@
 #include "aviso_perfil.h";
 #include "user_figuraCorte.h";
 #include "admin_figuraCorte.h";
+#include "admin_acciones.h"
+
 
 namespace SistemaControlCNCVIEW {
 
@@ -12,6 +14,9 @@ namespace SistemaControlCNCVIEW {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace Proyecto_SistemaCNC_Controller;
+	using namespace System::Collections::Generic;
+	using namespace Proyecto_SistemaCNC_model;
 
 	/// <summary>
 	/// Summary for ventana_inicio
@@ -119,6 +124,7 @@ namespace SistemaControlCNCVIEW {
 				static_cast<System::Byte>(0)));
 			this->textBox2->Location = System::Drawing::Point(273, 214);
 			this->textBox2->Name = L"textBox2";
+			this->textBox2->PasswordChar = '*';
 			this->textBox2->Size = System::Drawing::Size(173, 37);
 			this->textBox2->TabIndex = 3;
 			// 
@@ -132,6 +138,7 @@ namespace SistemaControlCNCVIEW {
 			this->button1->TabIndex = 4;
 			this->button1->Text = L"LIMPIAR";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &ventana_inicio::button1_Click);
 			// 
 			// button2
 			// 
@@ -178,19 +185,37 @@ namespace SistemaControlCNCVIEW {
 
 		}
 #pragma endregion
-	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (true) {
-			user_figuraCorte^ ventana_user_figuraCorte = gcnew user_figuraCorte();
-			ventana_user_figuraCorte->Show();
-			this->MinimizeBox;
-			
-		}
-		
-
-		
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ new_user = this->textBox1->Text;
+	String^ new_cont = this->textBox2->Text;
+	administradorController^ objadmin_conf = gcnew administradorController();
+	perfilController^ objperfil_conf = gcnew perfilController();
+	int confirmacion_admin = objadmin_conf->confirmar_administradorController(new_user, new_cont);
+	int confirmacion_user = objperfil_conf->confirmar_user(new_user, new_cont);
+	if (confirmacion_admin) {
+		admin_acciones^ ventana_admin_acciones = gcnew admin_acciones();
+		ventana_admin_acciones->Show();
+		this->MinimizeBox;
 	}
+	else if (confirmacion_user)
+	{
+		user_figuraCorte^ ventana_user_figuraCorte = gcnew user_figuraCorte();
+		ventana_user_figuraCorte->Show();
+		this->MinimizeBox;
+	}
+	else
+	{
+		MessageBox::Show("Usuario o Contraseña incorrecta");
+	}
+	this->textBox1->ResetText();
+	this->textBox2->ResetText();
+}
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->textBox1->ResetText();
+	this->textBox2->ResetText();
 }
 };
 }

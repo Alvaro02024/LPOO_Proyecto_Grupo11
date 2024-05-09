@@ -24,9 +24,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="administradorController.h" />
+    <ClInclude Include="licenciaController.h" />
+    <ClInclude Include="perfilController.h" />
     <ClInclude Include="showFiguraCorteController.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="administradorController.cpp" />
+    <ClCompile Include="licenciaController.cpp" />
+    <ClCompile Include="perfilController.cpp" />
     <ClCompile Include="showFiguraCorteController.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

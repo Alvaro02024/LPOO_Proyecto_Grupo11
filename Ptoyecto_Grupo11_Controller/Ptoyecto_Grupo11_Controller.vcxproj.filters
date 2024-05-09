@@ -18,9 +18,27 @@
     <ClInclude Include="showFiguraCorteController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="administradorController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="licenciaController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="perfilController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="showFiguraCorteController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="administradorController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="licenciaController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="perfilController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -39,6 +39,9 @@
     <ClCompile Include="new_FiguraCorte.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="admin_acciones.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ventana_inicio.h">
@@ -60,6 +63,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="new_FiguraCorte.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="admin_acciones.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
